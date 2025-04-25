@@ -1,0 +1,78 @@
+\chapter{Introduction}
+\label{ch:into}
+
+\section{Background}
+\label{sec:into_back}
+
+Understanding housing price trends is important for economic planning, smart investing, and making housing more accessible. In the U.S., housing markets can vary a lot — not just between states or cities, but even from one ZIP code to another. Predicting growth at a local level helps everyone from city planners to individual buyers make better decisions.
+
+Zillow’s Home Value Index (ZHVI) gives monthly estimates of home values across the country and is a great starting point for analysis. But price data alone doesn’t tell the full story. Things like income, education levels, household makeup, and transportation access all influence how housing prices change over time. In this project, we combined ZHVI time series data with demographic information from the American Community Survey (ACS) to build a model that can forecast local home price growth across Georgia ZIP codes.
+
+\section{Problem statement}
+\label{sec:intro_prob_art}
+
+The main goal of this project was to predict next-year home value growth at the ZIP-code level in Georgia. A lot of existing models work at a broader level — like metro areas or states — and often leave out important social and economic context. We wanted to build something more detailed, that looks at local trends and uses both housing and demographic data.
+
+This isn’t an easy problem. Home prices are sensitive to the economy, and there’s a lot of noise at the local level. Some ZIP codes don’t have much data, and there are also issues with reporting timelines and inconsistent trends from year to year. Still, our hope was that with a strong enough dataset and good feature engineering, we could make reliable short-term predictions.
+
+\section{Aims and objectives}
+\label{sec:intro_aims_obj}
+
+\textbf{Aim:}  
+Build a model that predicts one-year-ahead home value growth for ZIP codes in Georgia, using both housing trends and demographic data.
+
+\textbf{Objectives:}
+\begin{itemize}
+    \item Load and clean Zillow ZHVI data for Georgia ZIP codes.
+    \item Create features from the ZHVI time series (e.g., volatility, growth rates, prior YoY).
+    \item Add in ACS demographic data by county and year.
+    \item Compare different models: Decision Tree, KNN, and Random Forest.
+    \item Use feature selection (mutual information and f-regression) to reduce dimensionality.
+    \item Tune and evaluate each model using a ZIP-based test split.
+\end{itemize}
+
+\section{Solution approach}
+\label{sec:intro_sol}
+
+We built a long-format dataset where each row represents a single ZIP code in a given year. The target was defined as the YoY growth from that year to the next — letting the model learn how past trends relate to future outcomes.
+
+From the ZHVI data, we engineered features like:
+\begin{itemize}
+    \item Final ZHVI value for the year,
+    \item Average monthly price growth,
+    \item Volatility (standard deviation of monthly percent change),
+    \item CAGR (Compound Annual Growth Rate),
+    \item Number of years with negative YoY growth,
+    \item YoY growth in the previous year.
+\end{itemize}
+
+We merged in county-level ACS data by year, including indicators like:
+\begin{itemize}
+    \item Education levels,
+    \item Poverty rate,
+    \item Household structure,
+    \item Vehicle ownership,
+    \item Unemployment,
+    \item Age breakdowns.
+\end{itemize}
+
+After preprocessing, we trained three models: Decision Tree, KNN, and Random Forest. We used ZIP-based train/test splits to prevent target leakage and tuned hyperparameters using GridSearchCV. Feature selection helped reduce noise and focus on the most informative variables.
+
+\section{Summary of contributions and achievements}
+\label{sec:intro_sum_results}
+
+What we were able to do in this project:
+\begin{itemize}
+    \item Built a cleaned, long-format dataset combining housing and ACS data at the ZIP-year level.
+    \item Created interpretable housing features from raw price data.
+    \item Evaluated and tuned three models with proper train/test validation.
+    \item Identified top predictors like recent YoY growth, volatility, and education levels.
+    \item Made a visual tool to show predictions over time for individual ZIPs.
+\end{itemize}
+
+Our tuned Random Forest model gave the best results on the test set, while KNN and Decision Tree performed well but showed signs of overfitting without tuning. All models were able to pick up on general trends, and model performance mainly came down to how well the feature selection matched the model’s complexity.
+
+\section{Organization of the report}
+\label{sec:intro_org}
+
+This report is broken up into seven chapters. Chapter~\ref{ch:lit_rev} covers related work and existing methods in housing prediction. Chapter~\ref{ch:method} explains how the data was collected, cleaned, and turned into features. Chapter~\ref{ch:experiments} goes over the modeling process and includes results, tuning outcomes, and visualizations. Chapter~\ref{ch:discussion} discusses what the results mean and what worked well (or didn’t). Chapter~\ref{ch:conclusion} wraps things up and suggests future directions. The appendices include any extra figures or references used in the project.
