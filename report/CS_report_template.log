@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.7)  25 APR 2025 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.7)  1 MAY 2025 13:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -745,7 +745,7 @@ Package hyperref Info: Link coloring ON on input line 11.
 \@outlinefile=\write5
 \openout5 = `CS_report_template.out'.
 
-<figures/PrimaryLogo3color.jpg, id=156, 795.97375pt x 615.29875pt>
+<figures/PrimaryLogo3color.jpg, id=152, 795.97375pt x 615.29875pt>
 File: figures/PrimaryLogo3color.jpg Graphic file (type jpg)
 <use figures/PrimaryLogo3color.jpg>
 Package pdftex.def Info: figures/PrimaryLogo3color.jpg  used on input line 21.
@@ -789,7 +789,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [4
 
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] (./CS_report_template.lot)
+] (./CS_report_template.lot)
 \tf@lot=\write8
 \openout8 = `CS_report_template.lot'.
 
@@ -817,88 +817,93 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4
 
 ]
-<figures/topfeatures.png, id=279, 1292.9103pt x 570.2103pt>
+<figures/topfeatures.png, id=270, 1292.9103pt x 570.2103pt>
 File: figures/topfeatures.png Graphic file (type png)
 <use figures/topfeatures.png>
-Package pdftex.def Info: figures/topfeatures.png  used on input line 54.
+Package pdftex.def Info: figures/topfeatures.png  used on input line 61.
 (pdftex.def)             Requested size: 424.06033pt x 187.02148pt.
- [5] [6 <./figures/topfeatures.png>]) (./chapters/04_results.tex [7]
+ [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Overfull \hbox (52.80797pt too wide) in paragraph at lines 67--68
+[]\T1/lmss/m/n/10.95 Figure [][]2.1[][] shows that fea-tures like \T1/lmtt/m/n/10.95 YoY_LastYear\T1/lmss/m/n/10.95 , \T1/lmtt/m/n/10.95 Volatility\T1/lmss/m/n/10.95 , \T1/lmtt/m/n/10.95 FinalZHVI\T1/lmss/m/n/10.95 , and \T1/lmtt/m/n/10.95 AvgMonthlyGrowth
+ []
+
+) (./chapters/04_results.tex [6 <./figures/topfeatures.png>] [7]
 Chapter 3.
-<figures/box50_KNN.png, id=296, 1003.8303pt x 426.393pt>
+<figures/box50_DT.png, id=289, 1003.8303pt x 426.393pt>
+File: figures/box50_DT.png Graphic file (type png)
+<use figures/box50_DT.png>
+Package pdftex.def Info: figures/box50_DT.png  used on input line 12.
+(pdftex.def)             Requested size: 424.06033pt x 180.12483pt.
+<figures/box50_KNN.png, id=290, 1003.8303pt x 426.393pt>
 File: figures/box50_KNN.png Graphic file (type png)
 <use figures/box50_KNN.png>
-Package pdftex.def Info: figures/box50_KNN.png  used on input line 12.
-(pdftex.def)             Requested size: 424.06033pt x 180.12483pt.
-<figures/box50_RF.png, id=298, 1003.8303pt x 426.393pt>
-File: figures/box50_RF.png Graphic file (type png)
-<use figures/box50_RF.png>
-Package pdftex.def Info: figures/box50_RF.png  used on input line 22.
+Package pdftex.def Info: figures/box50_KNN.png  used on input line 23.
 (pdftex.def)             Requested size: 424.06033pt x 180.12483pt.
 [8
 
- <./figures/box50_KNN.png>]
-<figures/box50_DT.png, id=306, 1003.8303pt x 426.393pt>
-File: figures/box50_DT.png Graphic file (type png)
-<use figures/box50_DT.png>
-Package pdftex.def Info: figures/box50_DT.png  used on input line 32.
+ <./figures/box50_DT.png>]
+<figures/box50_RF.png, id=298, 1003.8303pt x 426.393pt>
+File: figures/box50_RF.png Graphic file (type png)
+<use figures/box50_RF.png>
+Package pdftex.def Info: figures/box50_RF.png  used on input line 34.
 (pdftex.def)             Requested size: 424.06033pt x 180.12483pt.
- [9 <./figures/box50_RF.png> <./figures/box50_DT.png>]
-<figures/RF1.png, id=317, 570.933pt x 426.393pt>
-File: figures/RF1.png Graphic file (type png)
-<use figures/RF1.png>
-Package pdftex.def Info: figures/RF1.png  used on input line 53.
-(pdftex.def)             Requested size: 318.04524pt x 237.53575pt.
-<figures/KNN1.png, id=319, 570.933pt x 426.393pt>
-File: figures/KNN1.png Graphic file (type png)
-<use figures/KNN1.png>
-Package pdftex.def Info: figures/KNN1.png  used on input line 63.
-(pdftex.def)             Requested size: 318.04524pt x 237.53575pt.
- [10 <./figures/RF1.png>]
-<figures/DT1.png, id=327, 570.933pt x 426.393pt>
+<figures/DT1.png, id=299, 570.933pt x 426.393pt>
 File: figures/DT1.png Graphic file (type png)
 <use figures/DT1.png>
-Package pdftex.def Info: figures/DT1.png  used on input line 73.
-(pdftex.def)             Requested size: 318.04524pt x 237.53575pt.
-<figures/RF2.png, id=332, 570.933pt x 426.393pt>
-File: figures/RF2.png Graphic file (type png)
-<use figures/RF2.png>
-Package pdftex.def Info: figures/RF2.png  used on input line 87.
-(pdftex.def)             Requested size: 318.04524pt x 237.53575pt.
- [11 <./figures/KNN1.png> <./figures/DT1.png>]
-<figures/KNN2.png, id=340, 570.933pt x 426.393pt>
-File: figures/KNN2.png Graphic file (type png)
-<use figures/KNN2.png>
-Package pdftex.def Info: figures/KNN2.png  used on input line 97.
-(pdftex.def)             Requested size: 318.04524pt x 237.53575pt.
- [12 <./figures/RF2.png> <./figures/KNN2.png>]
-<figures/DT2.png, id=349, 570.933pt x 426.393pt>
+Package pdftex.def Info: figures/DT1.png  used on input line 53.
+(pdftex.def)             Requested size: 203.54713pt x 152.01793pt.
+<figures/DT2.png, id=300, 570.933pt x 426.393pt>
 File: figures/DT2.png Graphic file (type png)
 <use figures/DT2.png>
-Package pdftex.def Info: figures/DT2.png  used on input line 107.
-(pdftex.def)             Requested size: 318.04524pt x 237.53575pt.
-<figures/testpred.png, id=351, 1003.8303pt x 426.393pt>
-File: figures/testpred.png Graphic file (type png)
-<use figures/testpred.png>
-Package pdftex.def Info: figures/testpred.png  used on input line 121.
+Package pdftex.def Info: figures/DT2.png  used on input line 56.
+(pdftex.def)             Requested size: 203.54713pt x 152.01793pt.
+ [9 <./figures/box50_KNN.png> <./figures/box50_RF.png>]
+<figures/KNN1.png, id=310, 570.933pt x 426.393pt>
+File: figures/KNN1.png Graphic file (type png)
+<use figures/KNN1.png>
+Package pdftex.def Info: figures/KNN1.png  used on input line 71.
+(pdftex.def)             Requested size: 203.54713pt x 152.01793pt.
+<figures/KNN2.png, id=311, 570.933pt x 426.393pt>
+File: figures/KNN2.png Graphic file (type png)
+<use figures/KNN2.png>
+Package pdftex.def Info: figures/KNN2.png  used on input line 74.
+(pdftex.def)             Requested size: 203.54713pt x 152.01793pt.
+ [10 <./figures/DT1.png> <./figures/DT2.png> <./figures/KNN1.png> <./figures/KNN2.png>]
+<figures/RF1.png, id=327, 570.2103pt x 426.393pt>
+File: figures/RF1.png Graphic file (type png)
+<use figures/RF1.png>
+Package pdftex.def Info: figures/RF1.png  used on input line 89.
+(pdftex.def)             Requested size: 203.54713pt x 152.20662pt.
+<figures/RF2.png, id=328, 570.933pt x 426.393pt>
+File: figures/RF2.png Graphic file (type png)
+<use figures/RF2.png>
+Package pdftex.def Info: figures/RF2.png  used on input line 92.
+(pdftex.def)             Requested size: 203.54713pt x 152.01793pt.
+<figures/timelineLow.png, id=331, 1003.8303pt x 426.393pt>
+File: figures/timelineLow.png Graphic file (type png)
+<use figures/timelineLow.png>
+Package pdftex.def Info: figures/timelineLow.png  used on input line 125.
 (pdftex.def)             Requested size: 424.06033pt x 180.12483pt.
- [13 <./figures/DT2.png> <./figures/testpred.png>]) (./chapters/05_discussion.tex [14]
+ [11 <./figures/RF1.png> <./figures/RF2.png>]
+<figures/timelineMedian.png, id=340, 1003.8303pt x 426.393pt>
+File: figures/timelineMedian.png Graphic file (type png)
+<use figures/timelineMedian.png>
+Package pdftex.def Info: figures/timelineMedian.png  used on input line 134.
+(pdftex.def)             Requested size: 424.06033pt x 180.12483pt.
+<figures/timelineHigh.png, id=341, 1004.553pt x 426.393pt>
+File: figures/timelineHigh.png Graphic file (type png)
+<use figures/timelineHigh.png>
+Package pdftex.def Info: figures/timelineHigh.png  used on input line 143.
+(pdftex.def)             Requested size: 424.06033pt x 179.9947pt.
+ [12 <./figures/timelineLow.png> <./figures/timelineMedian.png>]) (./chapters/05_discussion.tex [13 <./figures/timelineHigh.png>]
 Chapter 4.
-) (./chapters/06_conclusions.tex [15
+) (./chapters/06_conclusions.tex [14
 
 ]
 Chapter 5.
 )
 No file CS_report_template.bbl.
-[16
-
-] (./chapters/appendix_A.tex
-Appendix A.
-) (./chapters/appendix_B.tex [17
-
-
-]
-Appendix B.
-) [18
+[15
 
 ] (./CS_report_template.aux)
  ***********
@@ -910,21 +915,21 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `CS_report_template.out' has not changed.
-(rerunfilecheck)             Checksum: CA8DF9418636E2ED7B1EDB3F0BA0D5E6;5784.
+(rerunfilecheck)             Checksum: B33F9F2B232B8A110493913A10159AA3;5566.
  ) 
 Here is how much of TeX's memory you used:
- 21596 strings out of 474116
- 372900 string characters out of 5743683
- 1939187 words of memory out of 5000000
- 43518 multiletter control sequences out of 15000+600000
- 661817 words of font info for 98 fonts, out of 8000000 for 9000
+ 21573 strings out of 474116
+ 372765 string characters out of 5743683
+ 1940187 words of memory out of 5000000
+ 43501 multiletter control sequences out of 15000+600000
+ 638201 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,12n,107p,701b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on CS_report_template.pdf (25 pages, 858167 bytes).
+ 94i,12n,107p,685b,587s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on CS_report_template.pdf (22 pages, 1061467 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 371 compressed objects within 4 object streams
- 78 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 432 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 367 words of extra memory for PDF output out of 10000 (max. 10000000)
 

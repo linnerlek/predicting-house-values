@@ -9,30 +9,29 @@
 \contentsline {section}{\numberline {1.6}Organization of the report}{3}{section.1.6}%
 \contentsline {chapter}{\numberline {2}Methodology}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Overview}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Data collection and cleaning}{4}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Feature engineering}{4}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Zillow-derived features}{4}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}ACS features}{5}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Dataset preparation}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Feature selection}{5}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Model training and evaluation}{6}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Ethical considerations}{6}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Summary}{7}{section.2.8}%
+\contentsline {section}{\numberline {2.2}Data sources and filtering}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Rolling dataset creation}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Feature engineering}{4}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}ZHVI-based features}{4}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}ACS-derived features}{5}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Final dataset preparation}{5}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Feature selection}{5}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Model training and evaluation}{6}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Ethical considerations}{6}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Summary}{7}{section.2.9}%
 \contentsline {chapter}{\numberline {3}Results}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Feature selection and model comparison}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Test set prediction accuracy}{10}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Train vs test comparison}{12}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Prediction trend over time}{13}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Summary of test performance}{14}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Summary}{14}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Discussion and Analysis}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}A section}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Significance of the findings}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Limitations}{15}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Summary}{15}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{16}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusions}{16}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Future work}{16}{section.5.2}%
-\contentsline {chapter}{Appendices}{17}{section*.18}%
-\contentsline {chapter}{\numberline {A}An Appendix Chapter (Optional)}{17}{appendix.1.A}%
-\contentsline {chapter}{\numberline {B}An Appendix Chapter (Optional)}{18}{appendix.1.B}%
+\contentsline {section}{\numberline {3.2}Model prediction performance}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Decision Tree}{10}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}K-Nearest Neighbors (KNN)}{10}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Random Forest}{11}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Prediction trends over time}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Summary}{13}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Discussion and Analysis}{14}{chapter.4}%
+\contentsline {section}{\numberline {4.1}A section}{14}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Significance of the findings}{14}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Limitations}{14}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Summary}{14}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusions}{15}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Future work}{15}{section.5.2}%

@@ -1,138 +1,106 @@
 \chapter{Results}
 \label{ch:results}
 
-This chapter presents the results of our model training and evaluation. After building and tuning Decision Tree, K-Nearest Neighbors (KNN), and Random Forest regressors using ZIP-based splits, we assessed how well each model predicted year-over-year home value growth. Results are shown across three key areas: model performance with different feature counts, test set prediction accuracy, and model behavior over time for a sample ZIP code.
+This chapter presents the results of our model training and evaluation. We tested Decision Tree, K-Nearest Neighbors (KNN), and Random Forest regressors to predict next-year home value growth using a ZIP-based test split. The following sections show how model performance varies with feature selection, test accuracy, and behavior over time.
 
 \section{Feature selection and model comparison}
 
-We first examined how the number of selected features affected each model's performance. For every value of $k$ from 1 to 50, we used both f-regression and mutual information to rank features. The top-$k$ features were then used to compute 3-fold cross-validated $R^2$ scores for each model.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\textwidth]{figures/box50_KNN.png}
-    \caption{Cross-validated $R^2$ scores for KNN model.}
-    \label{fig:box_knn}
-\end{figure}
-\FloatBarrier
-
-In Figure~\ref{fig:box_knn}, the KNN model shows a clear performance increase up to about 8 or 9 features, after which the $R^2$ scores plateau. f-regression consistently led to slightly higher performance at low values of $k$, with mutual information catching up as more features were added. Beyond 12–15 features, there was no significant improvement, and some increase in variance was observed, especially with mutual information.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\textwidth]{figures/box50_RF.png}
-    \caption{Cross-validated $R^2$ scores for Random Forest model.}
-    \label{fig:box_rf}
-\end{figure}
-\FloatBarrier
-
-Random Forest results in Figure~\ref{fig:box_rf} show a steep improvement in $R^2$ from 1 to around 15 features, peaking between 15–20 features. After that, performance remains mostly stable. The model is more robust to the number of features used, with mutual information providing slightly more consistent results at higher $k$. The box plots are compact throughout, indicating stable behavior across folds.
+We used mutual information and f-regression to rank features, then evaluated model performance using the top-$k$ features for $k \in [1, 50]$. Figures below show the 3-fold cross-validated $R^2$ scores across feature counts.
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=\textwidth]{figures/box50_DT.png}
-    \caption{Cross-validated $R^2$ scores for Decision Tree model.}
+    \caption{Feature selection performance for Decision Tree}
+    \caption*{\hspace{1em}}
     \label{fig:box_dt}
 \end{figure}
 \FloatBarrier
 
-Figure~\ref{fig:box_dt} shows that the Decision Tree model is the most sensitive to the number of features. Performance improves up to around 8–10 features, but quickly deteriorates beyond that, especially with mutual information. This is likely due to overfitting. The most compact and stable results occurred when using 8–12 features, with f-regression performing slightly better overall.
-
-Based on these observations, we selected the following number of features for each model:
-\begin{itemize}
-    \item \textbf{Decision Tree:} 8 features
-    \item \textbf{KNN:} 9 features
-    \item \textbf{Random Forest:} 16 features
-\end{itemize}
-
-\section{Test set prediction accuracy}
-
-We evaluated each model on a held-out test set of ZIP codes that were not used during training. Figures~\ref{fig:rf_pred}, \ref{fig:knn_pred}, and \ref{fig:dt_pred} show the predicted vs actual year-over-year growth values, along with a regression line, an ideal line ($y = x$), and ±1 RMSE bands.
+Decision Tree improves up to about 8–10 features, then rapidly declines. This is especially evident when using mutual information, which adds non-linear but noisy variables. The model is sensitive to irrelevant input and prone to overfitting.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/RF1.png}
-    \caption{Random Forest (Tuned): Test set predictions.}
-    \label{fig:rf_pred}
+    \includegraphics[width=\textwidth]{figures/box50_KNN.png}
+    \caption{Feature selection performance for K-Nearest Neighbors}
+    \caption*{\hspace{1em}}
+    \label{fig:box_knn}
 \end{figure}
 \FloatBarrier
 
-In Figure~\ref{fig:rf_pred}, the Random Forest model shows the strongest test performance. Most predictions fall close to the ideal line, and the regression line closely matches it with a steep slope. The green dashed bands (±1 RMSE) are relatively tight, covering most of the distribution. The model achieved an $R^2$ score of 0.774 on the test set.
+KNN performance increases up to 9 features, then plateaus. f-regression works best at low $k$, while mutual information stabilizes later. This shows that KNN benefits from smaller, more targeted feature sets and becomes unstable with excess input.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/KNN1.png}
-    \caption{KNN (Tuned): Test set predictions.}
-    \label{fig:knn_pred}
+    \includegraphics[width=\textwidth]{figures/box50_RF.png}
+    \caption{Feature selection performance for Random Forest}
+    \caption*{\hspace{1em}}
+    \label{fig:box_rf}
 \end{figure}
 \FloatBarrier
 
-The KNN model in Figure~\ref{fig:knn_pred} also performed well, achieving a test $R^2$ of 0.739. Its predictions were slightly more spread out compared to Random Forest, and the regression line was less steep. A few outliers at the higher end of the target range were underpredicted, but the overall alignment to the ideal trend was solid.
+Random Forest improves steadily up to about 16 features and holds steady beyond that. Its low variance and tolerance for redundant input reflect the model’s robustness and internal feature selection behavior.
+
+\section{Model prediction performance}
+
+This section evaluates how well each model predicts on unseen ZIP codes. For each model, we compare test set accuracy and generalization behavior by plotting predicted vs actual YoY values and train vs test predictions.
+
+\subsection{Decision Tree}
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/DT1.png}
-    \caption{Decision Tree (Tuned): Test set predictions.}
-    \label{fig:dt_pred}
+    \subfigure[]{%
+        \includegraphics[width=0.48\textwidth]{figures/DT1.png}
+    }\hfill
+    \subfigure[]{%
+        \includegraphics[width=0.48\textwidth]{figures/DT2.png}
+    }
+    \caption{Decision Tree test performance}
+    \caption*{\hspace{1em}}
+    \label{fig:dt_results}
 \end{figure}
 \FloatBarrier
 
-Figure~\ref{fig:dt_pred} shows the weakest test performance, from the Decision Tree model. Its regression line is noticeably flatter than the ideal, and predictions show more deviation. It underpredicts many higher values and compresses the range of outputs. The test $R^2$ was 0.564, indicating limited generalization.
+The Decision Tree model underperforms relative to the other models. In Figure~\ref{fig:dt_results}a, test predictions are concentrated near the mean, failing to capture the spread in actual values. The regression line is shallow and diverges significantly from the ideal diagonal. Figure~\ref{fig:dt_results}b shows that while the model fits the training set tightly, it generalizes poorly. This indicates overfitting, which is consistent with its lower $R^2$ score and wider error margins on the test set.
 
-\section{Train vs test comparison}
-
-To understand how well each model generalizes, we compared train vs test predictions side by side. Figures~\ref{fig:rf_train_test}, \ref{fig:knn_train_test}, and \ref{fig:dt_train_test} show both sets of predictions in one plot.
+\subsection{K-Nearest Neighbors (KNN)}
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/RF2.png}
-    \caption{Random Forest: Train vs test predictions.}
-    \label{fig:rf_train_test}
+    \subfigure[]{%
+        \includegraphics[width=0.48\textwidth]{figures/KNN1.png}
+    }\hfill
+    \subfigure[]{%
+        \includegraphics[width=0.48\textwidth]{figures/KNN2.png}
+    }
+    \caption{KNN test performance}
+    \caption*{\hspace{1em}}
+    \label{fig:knn_results}
 \end{figure}
 \FloatBarrier
 
-Figure~\ref{fig:rf_train_test} shows a well-balanced fit for Random Forest. Predictions on both train and test sets are tightly clustered around the ideal line, suggesting the model generalizes well without overfitting.
+Figure~\ref{fig:knn_results}a shows that KNN predictions align more closely with actual values compared to Decision Tree, especially in the mid-range. However, the model tends to underpredict at the higher end of the target range. In Figure~\ref{fig:knn_results}b, training predictions are tighter than the test predictions, which show more scatter. This reflects the model’s reliance on similar training examples; when ZIPs with comparable patterns exist in the training data, KNN performs well, but it generalizes less effectively for outlier regions.
+
+\subsection{Random Forest}
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/KNN2.png}
-    \caption{KNN: Train vs test predictions.}
-    \label{fig:knn_train_test}
+    \subfigure[]{%
+        \includegraphics[width=0.48\textwidth]{figures/RF1.png}
+    }\hfill
+    \subfigure[]{%
+        \includegraphics[width=0.48\textwidth]{figures/RF2.png}
+    }
+    \caption{Random Forest test performance}
+    \caption*{\hspace{1em}}
+    \label{fig:rf_results}
 \end{figure}
 \FloatBarrier
 
-KNN (Figure~\ref{fig:knn_train_test}) also performs consistently across train and test splits, though train predictions are slightly tighter. The test distribution shows slightly more spread, but no major signs of overfitting.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/DT2.png}
-    \caption{Decision Tree: Train vs test predictions.}
-    \label{fig:dt_train_test}
-\end{figure}
-\FloatBarrier
-
-The Decision Tree (Figure~\ref{fig:dt_train_test}) shows a stronger fit on the train set than on the test set, with the test predictions exhibiting more variance. This difference suggests some overfitting, consistent with its lower $R^2$ on unseen ZIPs.
-
-\section{Prediction trend over time}
-
-To visualize how each model performs across years for the same location, we selected a ZIP code (31052) and plotted predictions alongside actual YoY values over time.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\textwidth]{figures/testpred.png}
-    \caption{Predicted vs actual YoY growth over time for ZIP 31052.}
-    \label{fig:testpred_zip}
-\end{figure}
-\FloatBarrier
-
-Figure~\ref{fig:testpred_zip} shows that all models followed the general trend of actual YoY growth, but with different levels of accuracy. Random Forest consistently tracked peaks and dips, while Decision Tree predictions were flatter and missed several changes. KNN captured sharp increases fairly well but overshot in some years. All three models produced usable forecasts, though Random Forest offered the most precise temporal behavior.
-
-\section{Summary of test performance}
-
-Table~\ref{tab:model_results} summarizes final performance on the test set using the selected number of features.
+Figure~\ref{fig:rf_results}a shows that Random Forest predictions are tightly clustered along the ideal $y=x$ line, with a regression slope closely matching the true trend. Outliers are limited, and the RMSE bands remain narrow. The train vs test comparison in Figure~\ref{fig:rf_results}b reveals minimal difference between the two sets, demonstrating strong generalization. This model clearly captures both typical and atypical ZIP behavior more effectively than KNN or Decision Tree.
 
 \begin{table}[!ht]
     \centering
-    \caption{Model performance on test set (selected features)}
+    \caption{Test set performance summary}
     \label{tab:model_results}
     \begin{tabular}{lcccc}
         \toprule
@@ -140,14 +108,47 @@ Table~\ref{tab:model_results} summarizes final performance on the test set using
         \midrule
         Random Forest (16 features) & 0.774 & 2.32 & 1.60 & 36.1\% \\
         KNN (9 features)            & 0.739 & 2.49 & 1.75 & 39.8\% \\
-        Decision Tree (8 features) & 0.564 & 3.22 & 2.26 & 45.7\% \\
+        Decision Tree (8 features)  & 0.564 & 3.22 & 2.26 & 45.7\% \\
         \bottomrule
     \end{tabular}
 \end{table}
 \FloatBarrier
 
+These results confirm that Random Forest was the most accurate and stable model across unseen ZIP codes, with the lowest error rates and highest $R^2$. KNN performed competitively but showed more variance on the test set. Decision Tree lagged behind due to overfitting and an inability to model the full target range.
+
+\section{Prediction trends over time}
+
+To evaluate how models perform across years for specific ZIP codes, we selected three ZIPs with high, median, and low ZHVI in 2024. The following figures compare actual vs predicted YoY growth over time.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/timelineLow.png}
+    \caption{Prediction trends over time for low-ZHVI ZIP}
+    \caption*{\hspace{1em}}
+    \label{fig:timeline_low}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/timelineMedian.png}
+    \caption{Prediction trends over time for median-ZHVI ZIP}
+    \caption*{\hspace{1em}}
+    \label{fig:timeline_median}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/timelineHigh.png}
+    \caption{Prediction trends over time for high-ZHVI ZIP}
+    \caption*{\hspace{1em}}
+    \label{fig:timeline_high}
+\end{figure}
+\FloatBarrier
+
+Across all three ZIP codes, the Random Forest model most consistently follows the actual YoY growth trend, particularly during years with noticeable dips or inflection points (e.g., 2016, 2019, 2023). In contrast, Decision Tree often smooths over or delays these changes, while KNN tends to flatten predictions and underestimates high-variance years. All models converge in the forecast period (2024–2025), but Random Forest shows closer alignment with the actual data in years prior, especially during periods of volatility.
+
 \section{Summary}
 
-All three models captured short-term housing value growth with varying levels of accuracy. Random Forest performed the best across the board, showing strong generalization and tight error margins. KNN followed closely and was relatively stable, but more sensitive to feature selection. Decision Tree required careful tuning and showed signs of overfitting at higher feature counts.
-
-Using both f-regression and mutual information helped ensure that selected features were consistently informative. The ZIP-based split offered a realistic test scenario, ensuring that models were evaluated on truly unseen locations.
+All three models learned meaningful patterns from the data, but Random Forest consistently performed the best. It generalizes well across ZIPs, tracks yearly growth over time, and balances fit without overfitting. KNN was competitive, especially in areas with stable trends, but struggled with rapid market shifts. Decision Tree was the weakest, showing overfitting in training and poor generalization in both time and accuracy-based evaluations.

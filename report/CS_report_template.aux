@@ -34,89 +34,83 @@
 \newlabel{ch:method}{{2}{4}{Methodology}{chapter.2}{}}
 \newlabel{ch:method@cref}{{[chapter][2][]2}{[1][4][]4}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Overview}{4}{section.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Data collection and cleaning}{4}{section.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Feature engineering}{4}{section.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Zillow-derived features}{4}{subsection.2.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}ACS features}{5}{subsection.2.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Dataset preparation}{5}{section.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Feature selection}{5}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Data sources and filtering}{4}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Rolling dataset creation}{4}{section.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Feature engineering}{4}{section.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}ZHVI-based features}{4}{subsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}ACS-derived features}{5}{subsection.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Final dataset preparation}{5}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Feature selection}{5}{section.2.6}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Top 20 features by F-Regression and Mutual Information.}}{6}{figure.caption.6}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:top_features}{{2.1}{6}{Top 20 features by F-Regression and Mutual Information}{figure.caption.6}{}}
 \newlabel{fig:top_features@cref}{{[figure][1][2]2.1}{[1][5][]6}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Model training and evaluation}{6}{section.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Ethical considerations}{6}{section.2.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.8}Summary}{7}{section.2.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Model training and evaluation}{6}{section.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.8}Ethical considerations}{6}{section.2.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.9}Summary}{7}{section.2.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Results}{8}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:results}{{3}{8}{Results}{chapter.3}{}}
 \newlabel{ch:results@cref}{{[chapter][3][]3}{[1][8][]8}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Feature selection and model comparison}{8}{section.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Cross-validated $R^2$ scores for KNN model.}}{8}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:box_knn}{{3.1}{8}{Cross-validated $R^2$ scores for KNN model}{figure.caption.7}{}}
-\newlabel{fig:box_knn@cref}{{[figure][1][3]3.1}{[1][8][]8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Cross-validated $R^2$ scores for Random Forest model.}}{9}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:box_rf}{{3.2}{9}{Cross-validated $R^2$ scores for Random Forest model}{figure.caption.8}{}}
-\newlabel{fig:box_rf@cref}{{[figure][2][3]3.2}{[1][8][]9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Cross-validated $R^2$ scores for Decision Tree model.}}{9}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:box_dt}{{3.3}{9}{Cross-validated $R^2$ scores for Decision Tree model}{figure.caption.9}{}}
-\newlabel{fig:box_dt@cref}{{[figure][3][3]3.3}{[1][9][]9}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Test set prediction accuracy}{10}{section.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Random Forest (Tuned): Test set predictions.}}{10}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:rf_pred}{{3.4}{10}{Random Forest (Tuned): Test set predictions}{figure.caption.10}{}}
-\newlabel{fig:rf_pred@cref}{{[figure][4][3]3.4}{[1][10][]10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces KNN (Tuned): Test set predictions.}}{11}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:knn_pred}{{3.5}{11}{KNN (Tuned): Test set predictions}{figure.caption.11}{}}
-\newlabel{fig:knn_pred@cref}{{[figure][5][3]3.5}{[1][10][]11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Decision Tree (Tuned): Test set predictions.}}{11}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:dt_pred}{{3.6}{11}{Decision Tree (Tuned): Test set predictions}{figure.caption.12}{}}
-\newlabel{fig:dt_pred@cref}{{[figure][6][3]3.6}{[1][11][]11}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Train vs test comparison}{12}{section.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Random Forest: Train vs test predictions.}}{12}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:rf_train_test}{{3.7}{12}{Random Forest: Train vs test predictions}{figure.caption.13}{}}
-\newlabel{fig:rf_train_test@cref}{{[figure][7][3]3.7}{[1][11][]12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces KNN: Train vs test predictions.}}{12}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:knn_train_test}{{3.8}{12}{KNN: Train vs test predictions}{figure.caption.14}{}}
-\newlabel{fig:knn_train_test@cref}{{[figure][8][3]3.8}{[1][12][]12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Decision Tree: Train vs test predictions.}}{13}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:dt_train_test}{{3.9}{13}{Decision Tree: Train vs test predictions}{figure.caption.15}{}}
-\newlabel{fig:dt_train_test@cref}{{[figure][9][3]3.9}{[1][13][]13}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Prediction trend over time}{13}{section.3.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Predicted vs actual YoY growth over time for ZIP 31052.}}{13}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:testpred_zip}{{3.10}{13}{Predicted vs actual YoY growth over time for ZIP 31052}{figure.caption.16}{}}
-\newlabel{fig:testpred_zip@cref}{{[figure][10][3]3.10}{[1][13][]13}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Summary of test performance}{14}{section.3.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Model performance on test set (selected features)}}{14}{table.caption.17}\protected@file@percent }
-\newlabel{tab:model_results}{{3.1}{14}{Model performance on test set (selected features)}{table.caption.17}{}}
-\newlabel{tab:model_results@cref}{{[table][1][3]3.1}{[1][14][]14}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Summary}{14}{section.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Discussion and Analysis}{15}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Feature selection performance for Decision Tree}}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:box_dt}{{3.1}{8}{Feature selection performance for Decision Tree}{figure.caption.7}{}}
+\newlabel{fig:box_dt@cref}{{[figure][1][3]3.1}{[1][8][]8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Feature selection performance for K-Nearest Neighbors}}{9}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:box_knn}{{3.2}{9}{Feature selection performance for K-Nearest Neighbors}{figure.caption.8}{}}
+\newlabel{fig:box_knn@cref}{{[figure][2][3]3.2}{[1][8][]9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Feature selection performance for Random Forest}}{9}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:box_rf}{{3.3}{9}{Feature selection performance for Random Forest}{figure.caption.9}{}}
+\newlabel{fig:box_rf@cref}{{[figure][3][3]3.3}{[1][9][]9}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Model prediction performance}{9}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Decision Tree}{10}{subsection.3.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Decision Tree test performance}}{10}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:dt_results}{{3.4}{10}{Decision Tree test performance}{figure.caption.10}{}}
+\newlabel{fig:dt_results@cref}{{[figure][4][3]3.4}{[1][9][]10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{10}{figure.caption.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{10}{figure.caption.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}K-Nearest Neighbors (KNN)}{10}{subsection.3.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces KNN test performance}}{10}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:knn_results}{{3.5}{10}{KNN test performance}{figure.caption.11}{}}
+\newlabel{fig:knn_results@cref}{{[figure][5][3]3.5}{[1][10][]10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{10}{figure.caption.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{10}{figure.caption.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Random Forest}{11}{subsection.3.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Random Forest test performance}}{11}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:rf_results}{{3.6}{11}{Random Forest test performance}{figure.caption.12}{}}
+\newlabel{fig:rf_results@cref}{{[figure][6][3]3.6}{[1][11][]11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{11}{figure.caption.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{11}{figure.caption.12}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Test set performance summary}}{11}{table.caption.13}\protected@file@percent }
+\newlabel{tab:model_results}{{3.1}{11}{Test set performance summary}{table.caption.13}{}}
+\newlabel{tab:model_results@cref}{{[table][1][3]3.1}{[1][11][]11}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Prediction trends over time}{11}{section.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Prediction trends over time for low-ZHVI ZIP}}{12}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:timeline_low}{{3.7}{12}{Prediction trends over time for low-ZHVI ZIP}{figure.caption.14}{}}
+\newlabel{fig:timeline_low@cref}{{[figure][7][3]3.7}{[1][11][]12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Prediction trends over time for median-ZHVI ZIP}}{12}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:timeline_median}{{3.8}{12}{Prediction trends over time for median-ZHVI ZIP}{figure.caption.15}{}}
+\newlabel{fig:timeline_median@cref}{{[figure][8][3]3.8}{[1][12][]12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Prediction trends over time for high-ZHVI ZIP}}{13}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:timeline_high}{{3.9}{13}{Prediction trends over time for high-ZHVI ZIP}{figure.caption.16}{}}
+\newlabel{fig:timeline_high@cref}{{[figure][9][3]3.9}{[1][12][]13}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Summary}{13}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Discussion and Analysis}{14}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:evaluation}{{4}{15}{Discussion and Analysis}{chapter.4}{}}
-\newlabel{ch:evaluation@cref}{{[chapter][4][]4}{[1][15][]15}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}A section}{15}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Significance of the findings}{15}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Limitations}{15}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Summary}{15}{section.4.4}\protected@file@percent }
+\newlabel{ch:evaluation}{{4}{14}{Discussion and Analysis}{chapter.4}{}}
+\newlabel{ch:evaluation@cref}{{[chapter][4][]4}{[1][14][]14}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}A section}{14}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Significance of the findings}{14}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Limitations}{14}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Summary}{14}{section.4.4}\protected@file@percent }
 \bibdata{references}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{16}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{15}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:con}{{5}{16}{Conclusions and Future Work}{chapter.5}{}}
-\newlabel{ch:con@cref}{{[chapter][5][]5}{[1][16][]16}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Conclusions}{16}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Future work}{16}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Appendices}{17}{section*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}An Appendix Chapter (Optional)}{17}{appendix.1.A}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{appn:A}{{A}{17}{An Appendix Chapter (Optional)}{appendix.1.A}{}}
-\newlabel{appn:A@cref}{{[chapter][1][]A}{[1][17][]17}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}An Appendix Chapter (Optional)}{18}{appendix.1.B}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{appn:B}{{B}{18}{An Appendix Chapter (Optional)}{appendix.1.B}{}}
-\newlabel{appn:B@cref}{{[chapter][2][]B}{[1][18][]18}}
-\gdef \@abspage@last{25}
+\newlabel{ch:con}{{5}{15}{Conclusions and Future Work}{chapter.5}{}}
+\newlabel{ch:con@cref}{{[chapter][5][]5}{[1][15][]15}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Conclusions}{15}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Future work}{15}{section.5.2}\protected@file@percent }
+\gdef \@abspage@last{22}
