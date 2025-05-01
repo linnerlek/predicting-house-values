@@ -15,22 +15,24 @@
 \contentsline {subsection}{\numberline {2.3.2}ACS features}{5}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}Dataset preparation}{5}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Feature selection}{5}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Model training and evaluation}{5}{section.2.6}%
+\contentsline {section}{\numberline {2.6}Model training and evaluation}{6}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Ethical considerations}{6}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Summary}{6}{section.2.8}%
-\contentsline {chapter}{\numberline {3}Results}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}A section}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Example of a Table in \LaTeX }{8}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Example of captions style}{8}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Summary}{8}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Discussion and Analysis}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}A section}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Significance of the findings}{9}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Limitations}{9}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Summary}{9}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{10}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusions}{10}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Future work}{10}{section.5.2}%
-\contentsline {chapter}{Appendices}{11}{section*.7}%
-\contentsline {chapter}{\numberline {A}An Appendix Chapter (Optional)}{11}{appendix.1.A}%
-\contentsline {chapter}{\numberline {B}An Appendix Chapter (Optional)}{12}{appendix.1.B}%
+\contentsline {section}{\numberline {2.8}Summary}{7}{section.2.8}%
+\contentsline {chapter}{\numberline {3}Results}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Feature selection and model comparison}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Test set prediction accuracy}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Train vs test comparison}{12}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Prediction trend over time}{13}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Summary of test performance}{14}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Summary}{14}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Discussion and Analysis}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}A section}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Significance of the findings}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Limitations}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Summary}{15}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{16}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusions}{16}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Future work}{16}{section.5.2}%
+\contentsline {chapter}{Appendices}{17}{section*.18}%
+\contentsline {chapter}{\numberline {A}An Appendix Chapter (Optional)}{17}{appendix.1.A}%
+\contentsline {chapter}{\numberline {B}An Appendix Chapter (Optional)}{18}{appendix.1.B}%

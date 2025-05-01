@@ -49,6 +49,16 @@ We applied two methods to rank features:
 
 Both methods were used to compare which features were most informative. These rankings were then used to build models with varying numbers of top features (from 1 to 50), and we compared performance using 3-fold cross-validation.
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/topfeatures.png}
+    \caption{Top 20 features by F-Regression and Mutual Information.}
+    \label{fig:top_features}
+\end{figure}
+\FloatBarrier
+
+Figure~\ref{fig:top_features} shows the top 20 features ranked by both methods. The most influential features were consistent across methods and included \texttt{YoY\_LastYear}, \texttt{Volatility}, \texttt{FinalZHVI}, and \texttt{AvgMonthlyGrowth}. F-regression emphasized time series performance metrics more strongly, while mutual information also highlighted ACS-derived features like poverty rate, vehicle access, and education level. This suggests that both price behavior and socioeconomic context contribute meaningfully to housing growth prediction.
+
 \section{Model training and evaluation}
 We tested three regression models:
 \begin{itemize}

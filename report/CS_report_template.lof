@@ -1,6 +1,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Top 20 features by F-Regression and Mutual Information.}}{6}{figure.caption.6}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Cross-validated $R^2$ scores for KNN model.}}{8}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Cross-validated $R^2$ scores for Random Forest model.}}{9}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Cross-validated $R^2$ scores for Decision Tree model.}}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Random Forest (Tuned): Test set predictions.}}{10}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces KNN (Tuned): Test set predictions.}}{11}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Decision Tree (Tuned): Test set predictions.}}{11}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Random Forest: Train vs test predictions.}}{12}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces KNN: Train vs test predictions.}}{12}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Decision Tree: Train vs test predictions.}}{13}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Predicted vs actual YoY growth over time for ZIP 31052.}}{13}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
