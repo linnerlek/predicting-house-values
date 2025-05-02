@@ -1,17 +1,26 @@
 \chapter{Conclusions and Future Work}
 \label{ch:con}
+
 \section{Conclusions}
-Typically a conclusions chapter first summarizes the investigated problem and its aims and objectives. It summaries the critical/significant/major findings/results about the aims and objectives that have been obtained by applying the key methods/implementations/experiment set-ups. A conclusions chapter draws a picture/outline of your project's central and the most signification contributions and achievements. 
 
-A good conclusions summary could be approximately 300--500 words long, but this is just a recommendation.
+This project explored the feasibility of modeling and predicting year-over-year growth in the Zillow Home Value Index (ZHVI) using historical housing and demographic features at the ZIP code level. The motivation stemmed from the need for data-driven insights to support homebuyers, investors, city planners, and policymakers in understanding local housing market dynamics and identifying high-value growth areas.
 
-A conclusions chapter followed by an abstract is the last things you write in your project report.
+A robust pipeline was developed, starting from data collection (Zillow ZHVI and U.S. Census ACS data), followed by preprocessing, feature engineering, model training, and evaluation. Techniques like one-hot encoding, normalization, and feature selection using \texttt{SelectKBest} were critical in handling the complexity and high dimensionality of the data. Models including Decision Tree, K-Nearest Neighbors (KNN), and Random Forest were trained, tuned, and evaluated.
 
-\section{Future work}
-This section should refer to Chapter~\ref{ch:results} where the author has reflected their criticality about their own solution. Concepts for future work are then sensibly proposed in this section.
+Among these, the \textbf{Random Forest model consistently outperformed} others, highlighting its ability to handle noisy and non-linear housing market data effectively. The ZIP-based data split helped prevent data leakage and ensured the generalizability of the model.
 
-\textbf{Guidance on writing future work:} While working on a project, you gain experience and learn the potential of your project and its future works. Discuss the future work of the project in technical terms. This has to be based on what has not been yet achieved in comparison to what you had initially planned and what you have learned from the project. Describe to a reader what future work(s) can be started from the things you have completed. This includes identifying what has not been achieved and what could be achieved. 
+While the model achieved reasonable predictive performance, the limitations in data coverage and geographic scope highlighted areas for future improvement. This project demonstrates that machine learning models, when paired with proper data handling techniques, can serve as valuable tools for interpreting real estate trends and guiding informed decision-making.
 
+\section{Future Work}
 
+\begin{enumerate}
+    \item \textbf{Incorporating Material Price Data:} A significant extension would be integrating average material prices into the feature set. This would allow the model to better capture macroeconomic influences on housing costs, offering deeper insight into supply-side drivers of home value changes.
 
-A good future work summary could be approximately 300--500 words long, but this is just a recommendation.
+    \item \textbf{Automated Data Updating with AI:} Leveraging AI to automate data ingestion from APIs (such as Zillow, Census, or commodity price feeds) can ensure that the dataset remains up-to-date without manual intervention. This will also allow the model to adapt dynamically as new information becomes available.
+
+    \item \textbf{Multi-Year Growth Modeling:} The current approach focuses on year-over-year changes. Extending this to multi-year trend forecasting would allow stakeholders to plan further into the future and could improve model robustness by capturing long-term dependencies.
+
+    \item \textbf{Improving Temporal and Geographic Flexibility:} Expanding the model to work across broader time periods and more geographic regions can increase its utility. This may involve integrating more granular spatial data or applying transfer learning approaches.
+
+    \item \textbf{Enhanced Visualization and Deployment:} Building a user-facing dashboard that visualizes ZIP code growth predictions and integrates filters for demographics, economic indicators, and material costs could greatly improve accessibility and real-world use.
+\end{enumerate}
