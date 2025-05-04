@@ -5,9 +5,17 @@
 This chapter explains how we built the dataset, engineered features from the ZHVI time series and ACS data, and trained and evaluated our models. All work was done in Python using \texttt{pandas}, \texttt{scikit-learn}, and \texttt{matplotlib}. Our focus was on building a predictive setup that avoided target leakage and relied only on information available at the cutoff year.
 
 \section{Data sources and filtering}
-We started with Zillow’s ZHVI dataset, which includes monthly home value estimates per ZIP code. We filtered the data to only include ZIPs in Georgia, removed rows with missing city or metro names, and excluded ZIPs with more than 12 consecutive months of missing values. For ZIPs missing metro data, we filled it based on the most common metro for the city or county, unless the city was ambiguous.
+We used two main data sources:
 
-We also pulled 1-Year ACS data from the U.S. Census Bureau’s API for all counties in Georgia. Since ACS is county-level, we assigned each ZIP the demographic values from its county for the matching year.
+\begin{itemize}
+    \item \textbf{Zillow Home Value Index (ZHVI)}: Monthly home value estimates by ZIP code, accessed from Zillow’s data portal~\cite{zillow_data}.
+    
+    \item \textbf{American Community Survey (ACS)}: County-level demographic and economic data from the U.S. Census Bureau, accessed through their data portal~\cite{acs_data}.
+\end{itemize}
+
+We filtered the ZHVI data to only include ZIPs in Georgia, removed rows with missing city or metro names, and excluded ZIPs with more than 12 consecutive months of missing values. For ZIPs missing metro data, we filled it based on the most common metro for the city or county, unless the city was ambiguous.
+
+The ACS data was pulled for all counties in Georgia. Since it is only available at the county level, each ZIP was assigned the values from its corresponding county for the matching year.
 
 \section{Rolling dataset creation}
 Each row in the final dataset represents a ZIP code and a year, using only data available up to the end of that year. We used a rolling window approach: for each ZIP-year pair, we created features from the historical ZHVI series leading up to December 31 of that year. If a ZIP didn’t have at least 24 months of usable data, we skipped it.

@@ -3,24 +3,26 @@
 
 \section{Conclusions}
 
-This project explored the feasibility of modeling and predicting year-over-year growth in the Zillow Home Value Index (ZHVI) using historical housing and demographic features at the ZIP code level. The motivation stemmed from the need for data-driven insights to support homebuyers, investors, city planners, and policymakers in understanding local housing market dynamics and identifying high-value growth areas.
+This project set out to predict one-year-ahead home value growth at the ZIP code level in Georgia using housing price trends from Zillow and demographic context from ACS data. The goal was to build a model that could pick up on both short-term market signals and longer-term economic patterns.
 
-A robust pipeline was developed, starting from data collection (Zillow ZHVI and U.S. Census ACS data), followed by preprocessing, feature engineering, model training, and evaluation. Techniques like one-hot encoding, normalization, and feature selection using \texttt{SelectKBest} were critical in handling the complexity and high dimensionality of the data. Models including Decision Tree, K-Nearest Neighbors (KNN), and Random Forest were trained, tuned, and evaluated.
+We built a structured pipeline that cleaned and combined both datasets, engineered useful features, and tested three models. Random Forest gave the best results overall, handling complex and noisy data without overfitting. It consistently outperformed Decision Tree and KNN, especially on unseen ZIP codes and in years with volatile growth patterns.
 
-Among these, the \textbf{Random Forest model consistently outperformed} others, highlighting its ability to handle noisy and non-linear housing market data effectively. The ZIP-based data split helped prevent data leakage and ensured the generalizability of the model.
+The features that mattered most were mostly tied to recent housing trends — like prior YoY growth, volatility, and monthly change — but demographic indicators like poverty and education levels also added value. Our feature selection process helped highlight which signals were reliable, and our ZIP-based test split ensured that models weren’t just memorizing locations.
 
-While the model achieved reasonable predictive performance, the limitations in data coverage and geographic scope highlighted areas for future improvement. This project demonstrates that machine learning models, when paired with proper data handling techniques, can serve as valuable tools for interpreting real estate trends and guiding informed decision-making.
+In the end, we were able to show that even with some limitations, combining housing and economic data can give solid short-term predictions at a local level. This kind of setup could be helpful for anyone trying to understand where growth might happen next — whether that’s a buyer, planner, or researcher.
 
 \section{Future Work}
 
+There are a few clear next steps that could build on this work:
+
 \begin{enumerate}
-    \item \textbf{Incorporating Material Price Data:} A significant extension would be integrating average material prices into the feature set. This would allow the model to better capture macroeconomic influences on housing costs, offering deeper insight into supply-side drivers of home value changes.
+    \item \textbf{Add material price data.} Including average construction or renovation costs might help explain changes in home value beyond demand. It could give better insight into supply-side effects.
 
-    \item \textbf{Automated Data Updating with AI:} Leveraging AI to automate data ingestion from APIs (such as Zillow, Census, or commodity price feeds) can ensure that the dataset remains up-to-date without manual intervention. This will also allow the model to adapt dynamically as new information becomes available.
+    \item \textbf{Look at longer-term growth.} Instead of just year-over-year changes, forecasting growth over 3 to 5 years would help with planning and might reduce noise in the predictions.
 
-    \item \textbf{Multi-Year Growth Modeling:} The current approach focuses on year-over-year changes. Extending this to multi-year trend forecasting would allow stakeholders to plan further into the future and could improve model robustness by capturing long-term dependencies.
+    \item \textbf{Expand to more regions and time periods.} Right now the model is limited to Georgia. Applying it to other states or using older data could test how generalizable it is and reveal regional differences.
 
-    \item \textbf{Improving Temporal and Geographic Flexibility:} Expanding the model to work across broader time periods and more geographic regions can increase its utility. This may involve integrating more granular spatial data or applying transfer learning approaches.
-
-    \item \textbf{Enhanced Visualization and Deployment:} Building a user-facing dashboard that visualizes ZIP code growth predictions and integrates filters for demographics, economic indicators, and material costs could greatly improve accessibility and real-world use.
+    \item \textbf{Build an interactive dashboard.} A simple tool that lets users explore ZIP-level predictions, filter by region or income level, and compare trends could make this more useful in practice.
 \end{enumerate}
+
+This project focused on modeling what was possible using the data available. With better geographic granularity and richer features, future versions could become more accurate, more flexible, and easier to use.

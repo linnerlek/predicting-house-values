@@ -1,1 +1,43 @@
 Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.run.xml
+
+# Editor-specific
+*.swp
+*.bak
+*.tmp
+
+# VS Code LaTeX Workshop
+*.pdfsync
+*.synctex(busy)
+*.synctex.gz(busy)
+
+# Output files
+*.dvi
+*.ps
+
+# JetBrains/VSCode
+.idea/
+.vscode/

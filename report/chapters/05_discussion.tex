@@ -1,21 +1,37 @@
-\chapter{Discussion and Analysis}
-\label{ch:evaluation}
+\chapter{Discussion}
+\label{ch:discussion}
 
-Depending on the type of project you are doing, this chapter can be merged with ``Results'' Chapter as `` Results and Discussion'' as suggested by your supervisor. 
+This chapter discusses why we saw the results we did in the previous section. It focuses on how feature importance was determined, why the models behaved the way they did, and what this tells us about the dataset overall.
 
-In the case of software development and the standalone applications, describe the significance of the obtained results/performance of the system. 
+\section{Why certain features ranked high}
 
+From both mutual information and f-regression, it was clear that price trend features were the most predictive. Things like previous YoY growth, average monthly growth, volatility, and end-of-year ZHVI consistently ranked at the top. That makes sense, since recent price momentum tends to carry forward, especially in stable markets. These variables give the model a direct view of how each ZIP has been performing recently.
 
+The ACS variables added useful context, especially for areas where price data alone might not be enough. For example, poverty rate, percent with a bachelor's degree or higher, and vehicle ownership were often ranked highly by mutual information. These features probably helped the model adjust for economic conditions that might affect future growth. In particular, education and income levels likely reflect long-term demand and neighborhood stability, even if they're not directly tied to price changes.
 
-\section{A section}% please use an appropriate section title
-The Discussion and Analysis chapter evaluates and analyses the results. It interprets the obtained results. 
+f-regression focused more on linear relationships, so it tended to prioritize the ZHVI-based features more heavily. Mutual information captured a broader mix, including nonlinear patterns between demographic indicators and future growth. This explains why mutual information sometimes ranked ACS variables higher, even though they weren't as strong on their own.
 
+\section{Why the models behaved differently}
 
+The Decision Tree performed the worst overall, and the main reason is overfitting. It tried to split on small patterns in the training data that didn’t generalize well. Once we added more than 8–10 features, its performance dropped quickly. This shows that the tree wasn’t able to handle noise or less relevant input. Since it makes hard splits, it doesn’t handle smooth or complex relationships well, especially when features are correlated.
 
-\section{Significance of the findings}
-In this chapter, you should also try to discuss the significance of the results and key findings, in order to enhance the reader's understanding of the investigated problem
+KNN did better, but only up to a point. It works by comparing test ZIPs to similar training ones, so if a ZIP had neighbors in the feature space with similar patterns, it predicted pretty well. But it struggled when a test ZIP didn’t have a close match. It also flattened predictions around the average, which is why it underpredicted at the high end. Adding too many features hurt performance, likely because of the curse of dimensionality. KNN does best with fewer, well-targeted features.
 
-\section{Limitations} % please discuss limitation of the project 
-Discuss the key limitations and potential implications or improvements of the findings.
+Random Forest was clearly the most stable. It improved as we added more features and didn’t overfit as quickly. That’s expected since it uses many trees with random splits and samples, which helps cancel out noise. It also handles both linear and nonlinear patterns well. Even when some features were weak or redundant, the model still performed consistently. This explains why Random Forest gave us the best test results and tracked the actual growth trends more closely in the time-based plots.
+
+\section{What the prediction patterns tell us}
+
+Looking at the time-based predictions, the models responded differently to trend shifts. Random Forest was the most responsive to real changes — it picked up on dips and rebounds more accurately. That was especially true in volatile years like 2016 or 2023. KNN smoothed over a lot of those changes and generally stayed closer to the mean. Decision Tree sometimes delayed changes or made jumps that didn’t match actual trends.
+
+All models performed better in ZIPs with more stable history. Volatile or sparse ZIPs were harder to predict, and that showed up in the wider spread of test errors. Still, even in those cases, Random Forest was usually closer than the others. It was able to combine short-term trends with economic context to make more reliable predictions.
+
+\section{Limitations to keep in mind}
+
+One limitation is that the ACS data is only available at the county level, so ZIPs within the same county get the same demographic values. This flattens differences between ZIPs that might actually be important. It probably reduced how much impact the ACS variables had in the model. Also, some ZIPs didn’t have enough ZHVI history to calculate good features, so they were excluded entirely.
+
+Another thing to consider is that the target is only one year ahead. While this keeps the setup simple and avoids long-term noise, it also means we’re only capturing short-term effects. A multi-year forecast might show different patterns, especially for slow-changing markets.
+
 \section{Summary}
-Write a summary of this chapter.
+
+Overall, the results make sense given the data. The most important predictors were recent price trends and economic indicators that reflect local demand and stability. Random Forest worked best because it could handle complex patterns without overfitting. KNN did well in some cases but was less reliable overall. Decision Tree overfit unless carefully limited. The feature selection helped simplify the models and made it easier to understand what signals were strongest.
+
