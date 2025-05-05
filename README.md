@@ -23,19 +23,18 @@ Note: Raw files are not included. Place the downloaded ZHVI file in the project 
 
 Target: `YoY_target` = percent growth from current year to next year  
 
-## Model Performance (Random Forest)
+## Model Performance
 
-| Metric | Score |
-|--------|-------|
-| R²     | 0.774 |
-| RMSE   | 2.32  |
-| MAE    | 1.60  |
-| SMAPE  | 36.1% |
+| Model          | R²    | RMSE | MAE  | SMAPE |
+|----------------|-------|------|------|--------|
+| Random Forest  | 0.774 | 2.32 | 1.60 | 36.2%  |
+| KNN            | 0.690 | 2.72 | 1.93 | 42.0%  |
+| Decision Tree  | 0.564 | 3.22 | 2.26 | 45.7%  |
 
-Split was done by ZIP to prevent geographic leakage.
+Train/test split was done by ZIP to prevent geographic leakage.
 
 ## Contributions
 
-| Name           | Contributions               |
-|----------------|-----------------------------|
-| Linn Kloefta | All coding, analysis, report writing, and modeling |
+| Name           | Contributions                               |
+|----------------|---------------------------------------------|
+| Linn Kloefta | All coding, analysis, modeling, and report  |

@@ -60,7 +60,7 @@ This section evaluates how well each model predicts on unseen ZIP codes. For eac
 \end{figure}
 \FloatBarrier
 
-The Decision Tree model underperforms relative to the other models. In Figure~\ref{fig:dt_results}a, test predictions are concentrated near the mean, failing to capture the spread in actual values. The regression line is shallow and diverges significantly from the ideal diagonal. Figure~\ref{fig:dt_results}b shows that while the model fits the training set tightly, it generalizes poorly. This indicates overfitting, which is consistent with its lower $R^2$ score and wider error margins on the test set.
+Figure~\ref{fig:dt_results}b shows that the Decision Tree model compresses predictions toward the center of the target range. High actual values are underpredicted, and low actual values are overestimated. The regression line is noticeably flatter than the ideal diagonal, indicating a strong mean-reverting tendency. In Figure~\ref{fig:dt_results}a, the test predictions fail to reflect the wider spread in actual values, while training points follow the trend more closely. This reflects overfitting on the training set and poor generalization to unseen ZIPs, which is consistent with the model's low $R^2$ and high error rates.
 
 \subsection{K-Nearest Neighbors (KNN)}
 
@@ -78,7 +78,7 @@ The Decision Tree model underperforms relative to the other models. In Figure~\r
 \end{figure}
 \FloatBarrier
 
-Figure~\ref{fig:knn_results}a shows that KNN predictions align more closely with actual values compared to Decision Tree, especially in the mid-range. However, the model tends to underpredict at the higher end of the target range. In Figure~\ref{fig:knn_results}b, training predictions are tighter than the test predictions, which show more scatter. This reflects the model’s reliance on similar training examples; when ZIPs with comparable patterns exist in the training data, KNN performs well, but it generalizes less effectively for outlier regions.
+KNN shows a more balanced prediction pattern. In Figure~\ref{fig:knn_results}a, most predictions fall near the regression line, though there is underprediction at the upper end and more scatter at the extremes. The central trend is captured more accurately than in Decision Tree. Figure~\ref{fig:knn_results}b shows that both train and test points follow the general diagonal trend, but test predictions are more dispersed. The model performs best when ZIPs with similar history exist in the training data, but becomes less reliable in areas with unique or high-growth patterns.
 
 \subsection{Random Forest}
 
@@ -96,7 +96,7 @@ Figure~\ref{fig:knn_results}a shows that KNN predictions align more closely with
 \end{figure}
 \FloatBarrier
 
-Figure~\ref{fig:rf_results}a shows that Random Forest predictions are tightly clustered along the ideal $y=x$ line, with a regression slope closely matching the true trend. Outliers are limited, and the RMSE bands remain narrow. The train vs test comparison in Figure~\ref{fig:rf_results}b reveals minimal difference between the two sets, demonstrating strong generalization. This model clearly captures both typical and atypical ZIP behavior more effectively than KNN or Decision Tree.
+Figure~\ref{fig:rf_results}a shows that Random Forest predictions generally follow the upward trend, with the regression line reasonably close to the ideal $y = x$ line. While predictions are less dispersed than those of the other models, there is still noticeable spread, particularly at the extremes. The RMSE band captures a good portion of the points, reflecting improved but not perfect accuracy. Figure~\ref{fig:rf_results}b shows that the model performs comparably on training and test sets, with no major signs of overfitting. Overall, Random Forest offers the best balance between accuracy and generalization among the three models.
 
 \begin{table}[!ht]
     \centering
@@ -106,8 +106,8 @@ Figure~\ref{fig:rf_results}a shows that Random Forest predictions are tightly cl
         \toprule
         \textbf{Model} & \textbf{R\textsuperscript{2}} & \textbf{RMSE} & \textbf{MAE} & \textbf{SMAPE} \\
         \midrule
-        Random Forest (16 features) & 0.774 & 2.32 & 1.60 & 36.1\% \\
-        KNN (9 features)            & 0.739 & 2.49 & 1.75 & 39.8\% \\
+        Random Forest (16 features) & 0.774 & 2.32 & 1.60 & 36.2\% \\
+        KNN (9 features)            & 0.690 & 2.72 & 1.93 & 42.0\% \\
         Decision Tree (8 features)  & 0.564 & 3.22 & 2.26 & 45.7\% \\
         \bottomrule
     \end{tabular}
