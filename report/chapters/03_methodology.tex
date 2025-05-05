@@ -20,7 +20,7 @@ The ACS data was pulled for all counties in Georgia. Since it is only available 
 \section{Rolling dataset creation}
 Each row in the final dataset represents a ZIP code and a year, using only data available up to the end of that year. We used a rolling window approach: for each ZIP-year pair, we created features from the historical ZHVI series leading up to December 31 of that year. If a ZIP didn’t have at least 24 months of usable data, we skipped it.
 
-We interpolated missing values linearly and skipped any year where we couldn’t compute the YoY from the prior year. The final YoY value for the *next* year was used as the target, meaning we are predicting one year ahead for each row.
+We interpolated missing values linearly and skipped any year where we couldn’t compute the YoY from the prior year. The final YoY value for the \textit{next} year was used as the target, meaning we are predicting one year ahead for each row.
 
 \section{Feature engineering}
 \subsection{ZHVI-based features}
@@ -49,9 +49,11 @@ Each ZIP inherited its county's ACS values. We engineered the following from raw
 For 2024, we forward-filled values using 2023’s ACS data since 2024 estimates were unavailable.
 
 \section{Final dataset preparation}
-Before modeling, we removed ZIP-years with missing target values. We grouped rare county and metro names into an \texttt{Other} category to reduce sparsity, then one-hot encoded the remaining categorical columns.
+Before modeling, we grouped rare county and metro names into an \texttt{Other} category to reduce sparsity, then one-hot encoded the remaining categorical columns.
 
 To avoid leakage, we split the data by ZIP code rather than by row. That means if a ZIP appears in the training set, none of its years appear in the test set. This ensures the model isn’t learning from repeated geographic patterns across time.
+
+We used data from the years 2011 through 2024, excluding 2020 due to unreliable ACS data during the COVID-19 pandemic. Although 2024 lacks observed target values, these rows were included in the final dataset for future forecasting. Only ZIP–year rows with valid targets were used for training and evaluation.
 
 The final dataset had 3{,}009 rows and 139 columns, including both engineered and encoded features.
 
